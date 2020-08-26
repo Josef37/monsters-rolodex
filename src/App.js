@@ -25,15 +25,16 @@ class App extends Component {
     );
   }
 
-  onInputChange(event) {
+  handleChange = (event) => {
     this.setState({ searchField: event.target.value });
-  }
+  };
 
   render() {
     return (
       <div className="App">
+        <h1>Monsters Rolodex</h1>
         <SearchBox
-          handleChange={this.onInputChange.bind(this)}
+          handleChange={this.handleChange}
           placeholder="Search Monsters"
         />
         <CardList monsters={this.getFilteredMonsters()} />
